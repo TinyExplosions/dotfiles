@@ -5,8 +5,8 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # ssh!
-alias shh='ssh aurgasm@aurgasm.us'
-alias shhve='ssh paul@javascriptbattle.com'
+#alias shh='ssh aurgasm@aurgasm.us'
+#alias shhve='ssh paul@javascriptbattle.com'
 
 # programs
 alias slt='open -a "Sublime Text 2"'
@@ -16,7 +16,7 @@ alias subl='open -a "Sublime Text 2"'
 alias please=sudo
 
 # handy things
-alias bunyip='node ~/code/bunyip/cli.js'
+#alias bunyip='node ~/code/bunyip/cli.js'
 
 
 # List all files colorized in long format, including dot files
