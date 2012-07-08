@@ -12,7 +12,7 @@ function f() {
 
 # lets toss an image onto my server and pbcopy that bitch.
 function scpp() {
-    scp "$1" autobot@gir.serenos.net:~/assets.serenos.net/i;
+    scp "$1" autobot@gir.serenos.net:~/assets.serenos.net/public/i;
     echo "http://assets.serenos.net/i/$1" | pbcopy;
     echo "Copied to clipboard: http://assets.serenos.net/i/$1"
 }
