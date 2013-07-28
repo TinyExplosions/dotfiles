@@ -15,7 +15,7 @@ unset file
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 
-# Prefer US English and use UTF-8
+# Prefer UK English and use UTF-8
 export LC_ALL="en_GB.UTF-8"
 export LANG="en_GB"
 
