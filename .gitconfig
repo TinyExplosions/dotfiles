@@ -1,4 +1,4 @@
-[alias]
+ [alias]
 	c = commit -am
 	up = pull
 	p = push
@@ -7,12 +7,18 @@
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 [color]
 	ui = always
+[diff]
+    renames = copies
+    mnemonicprefix = true
+    tool = Kaleidoscope
+[difftool]
+    prompt = false
 [apply]
 	whitespace = fix
 [core]
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
-	whitespace = fix,space-before-tab,tab-in-indent,trailing-space
+	whitespace = trailing-space,fix,space-before-tab,tab-in-indent,trailing-space
 [color "branch"]
 	current = yellow reverse
 	local = yellow

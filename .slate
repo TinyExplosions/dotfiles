@@ -1,0 +1,73 @@
+# Configs
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+config secondsBetweenRepeat 0.1
+config checkDefaultsOnLoad true
+config focusCheckWidthMax 3000
+
+# Monitor Aliases
+alias mon-laptop    1440x900
+alias mon-dell      1920x1080
+
+# Position Aliases
+alias 1-full            move screenOriginX;screenOriginY                                screenSizeX;screenSizeY                 ${mon-laptop}
+alias 1-centred         move screenOriginX+screenSizeX/16;screenOriginY+screenSizeY/16  screenSizeX/16*14;screenSizeY/16*14     ${mon-laptop}
+alias 1-lefthalf        move screenOriginX;screenOriginY                                screenSizeX/2;screenSizeY               ${mon-laptop}
+alias 1-left3qtr        move screenOriginX;screenOriginY                                screenSizeX/4*3;screenSizeY             ${mon-laptop}
+alias 1-righthalf       move screenOriginX+screenSizeX/2;screenOriginY                  screenSizeX/2;screenSizeY               ${mon-laptop}
+alias 1-right3qtr       move screenOriginX+screenSizeX/4;screenOriginY                  screenSizeX/4*3;screenSizeY             ${mon-laptop}
+alias 1-rightthird      move screenOriginX+screenSizeX/3*2;screenOriginY                screenSizeX/3;screenSizeY               ${mon-laptop}
+alias 1-rightsixth      move screenOriginX+screenSizeX/6*5;screenOriginY                screenSizeX/6;screenSizeY               ${mon-laptop}
+alias 1-topleft         corner top-left resize:screenSizeX/2;screenSizeY/2                                                      ${mon-laptop}
+alias 1-topright        corner top-right resize:screenSizeX/2;screenSizeY/2                                                     ${mon-laptop}
+alias 1-bottomleft      corner bottom-left resize:screenSizeX/2;screenSizeY/2                                                   ${mon-laptop}
+alias 1-bottomright     corner bottom-right resize:screenSizeX/2;screenSizeY/2                                                  ${mon-laptop}
+
+alias 2-full            move screenOriginX;screenOriginY                                screenSizeX;screenSizeY                 ${mon-dell}
+alias 2-centred         move screenOriginX+screenSizeX/7;screenOriginY+screenSizeY/7    screenSizeX/7*5;screenSizeY/7*5         ${mon-dell}
+alias 2-lefthalf        move screenOriginX;screenOriginY                                screenSizeX/2;screenSizeY               ${mon-dell}
+alias 2-left3qtr        move screenOriginX;screenOriginY                                screenSizeX/4*3;screenSizeY             ${mon-dell}
+alias 2-righthalf       move screenOriginX+screenSizeX/2;screenOriginY                  screenSizeX/2;screenSizeY               ${mon-dell}
+alias 2-right3qtr       move screenOriginX+screenSizeX/4;screenOriginY                  screenSizeX/4*3;screenSizeY             ${mon-dell}
+alias 2-rightthird      move screenOriginX+screenSizeX/3*2;screenOriginY                screenSizeX/3;screenSizeY               ${mon-dell}
+alias 2-rightsixth      move screenOriginX+screenSizeX/6*5;screenOriginY                screenSizeX/6;screenSizeY               ${mon-dell}
+alias 2-topleft         corner top-left resize:screenSizeX/2;screenSizeY/2                                                      ${mon-dell}
+alias 2-topright        corner top-right resize:screenSizeX/2;screenSizeY/2                                                     ${mon-dell}
+alias 2-bottomleft      corner bottom-left resize:screenSizeX/2;screenSizeY/2                                                   ${mon-dell}
+alias 2-bottomright     corner bottom-right resize:screenSizeX/2;screenSizeY/2                                                  ${mon-dell}
+
+# Default Layouts
+default 2monitors resolutions:${mon-dell};${mon-laptop}
+default 1monitor  resolutions:${mon-laptop}
+
+#layouts for single monitor
+layout 1monitor 'iTerm':REPEAT ${1-lefthalf}
+layout 1monitor 'Sublime Text 2':REPEAT ${1-left3qtr}
+layout 1monitor 'Google Chrome':REPEAT ${1-centred}
+layout 1monitor 'Mail':REPEAT ${1-centred}
+layout 1monitor 'Messages':TITLE_ORDER=Messages,Buddies ${1-topleft} | ${1-rightsixth}
+layout 1monitor 'Skype':REPEAT ${1-rightthird}
+layout 1monitor 'Preview':REPEAT ${1-lefthalf}
+
+# 2 Monitor layout
+layout 2monitors 'iTerm':REPEAT ${1-lefthalf} | ${1-righthalf}
+layout 2monitors 'Sublime Text 2':REPEAT ${2-left3qtr}
+layout 2monitors 'Google Chrome':REPEAT ${2-centred}
+layout 2monitors 'Mail':REPEAT ${2-centred}
+layout 2monitors 'Messages':TITLE_ORDER=Messages,Buddies ${1-topleft} | ${1-rightsixth}
+layout 2monitors 'Skype':REPEAT ${1-rightthird}
+layout 2monitors 'Preview':REPEAT ${2-lefthalf}
+
+#location Bindings
+bind 1:cmd;alt chain ${1-topleft} | ${2-topleft}
+bind 2:cmd;alt chain ${1-topright} | ${2-topright}
+bind 3:cmd;alt chain ${1-bottomleft} | ${2-bottomleft}
+bind 4:cmd;alt chain ${1-bottomright} | ${2-bottomright}
+bind l:cmd;alt chain ${1-lefthalf} | ${2-lefthalf}
+bind l:cmd;alt;shift chain ${1-left3qtr} | ${2-left3qtr}
+bind r:cmd;alt chain ${1-righthalf} | ${2-righthalf}
+bind r:cmd;alt;shift chain ${1-right3qtr} | ${2-right3qtr}
+bind f:cmd;alt chain ${1-full} | ${2-full}
+bind c:cmd;alt chain ${1-centred} | ${2-centred}
+bind c:cmd;alt;shift chain ${2-centred} | ${2-centred}
