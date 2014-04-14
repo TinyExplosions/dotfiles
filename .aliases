@@ -11,8 +11,8 @@ alias -- -="cd -"
 #alias shhve='ssh paul@javascriptbattle.com'
 
 # programs
-alias slt='open -a "Sublime Text 2"'
-alias subl='open -a "Sublime Text 2"'
+alias slt='open -a "Sublime Text"'
+alias subl='open -a "Sublime Text"'
 
 # be nice
 alias please=sudo
@@ -103,8 +103,8 @@ alias rot13='tr a-zA-Z n-za-mN-ZA-M'
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
 
 # Show/hide hidden files in Finder
-alias show="defaults write com.apple.Finder AppleShowAllFiles -bool true && killall Finder"
-alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false && killall Finder"
+alias show="defaults write com.apple.Finder AppleShowAllFiles 1 && killall Finder"
+alias hide="defaults write com.apple.Finder AppleShowAllFiles 0 && killall Finder"
 
 # Hide/show all desktop icons (useful when presenting)
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
