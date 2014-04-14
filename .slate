@@ -7,7 +7,7 @@ config checkDefaultsOnLoad true
 config focusCheckWidthMax 3000
 
 # Monitor Aliases
-alias mon-laptop    2560x1600
+alias mon-laptop    1440x900
 alias mon-dell      1920x1080
 
 # Position Aliases
