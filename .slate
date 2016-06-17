@@ -5,10 +5,14 @@ config resizePercentOf screenSize
 config secondsBetweenRepeat 0.1
 config checkDefaultsOnLoad true
 config focusCheckWidthMax 3000
+config windowHintsShowIcons true
+config windowHintsIgnoreHiddenWindows false
+config windowHintsSpread true
 
 # Monitor Aliases
 alias mon-laptop    1440x900
 alias mon-dell      1920x1080
+alias mon-apple      2560X1440
 
 # Position Aliases
 alias 1-full            move screenOriginX;screenOriginY                                screenSizeX;screenSizeY                 ${mon-laptop}
